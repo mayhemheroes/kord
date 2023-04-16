@@ -1,0 +1,29 @@
+[package]
+name = "kord-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.kord]
+path = ".."
+default-features = false
+features = ["audio"]
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "kord-fuzz"
+path = "fuzz_targets/kord-fuzz.rs"
+test = false
+doc = false
