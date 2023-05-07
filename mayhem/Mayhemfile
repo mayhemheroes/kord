@@ -1,0 +1,6 @@
+project: kord
+target: kord-fuzz
+
+cmds:
+    - cmd: ./kord-fuzz
+      libfuzzer: true
