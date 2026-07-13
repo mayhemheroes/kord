@@ -1,0 +1,5 @@
+project: kord
+target: kord-fuzz
+cmds:
+  - cmd: /mayhem/kord-fuzz
+    libfuzzer: true

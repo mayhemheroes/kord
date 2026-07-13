@@ -1,0 +1,6 @@
+# BuildKit per-Dockerfile ignore: overrides the upstream root .dockerignore (which
+# excludes .git — the commit image MUST bake the full repo incl. .git, SPEC §6.2 item 2).
+# Keep only build-artifact exclusions here.
+target/
+**/target/
+.hidden/
